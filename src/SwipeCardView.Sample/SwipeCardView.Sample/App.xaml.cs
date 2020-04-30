@@ -15,7 +15,7 @@ namespace SwipeCardView.Sample
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainViewPage());
         }
 
         protected override void OnStart()

@@ -159,6 +159,7 @@ namespace MLToolkit.Forms.SwipeCardView
 
         public IList ItemsSource
         {
+            //TODO: ASource 
             get => (IList)GetValue(ItemsSourceProperty);
             set => SetValue(ItemsSourceProperty, value);
         }
@@ -176,10 +177,10 @@ namespace MLToolkit.Forms.SwipeCardView
         }
 
         // TODO Uncomment to enable the feature
-        ////public object PreviousItem
+        ////public object previousitem
         ////{
-        ////    get => (object)GetValue(PreviousItemProperty);
-        ////    set => SetValue(PreviousItemProperty, value);
+        ////    get => (object)getvalue(previousitemproperty);
+        ////    set => setvalue(previousitemproperty, value);
         ////}
 
         public ICommand SwipedCommand
