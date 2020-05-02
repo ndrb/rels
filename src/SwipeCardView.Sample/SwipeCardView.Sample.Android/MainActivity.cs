@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Firebase;
 
 namespace SwipeCardView.Sample.Droid
 {
@@ -9,6 +10,8 @@ namespace SwipeCardView.Sample.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+
+            FirebaseApp.InitializeApp(Application.Context);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

@@ -93,6 +93,8 @@ namespace MLToolkit.Forms.SwipeCardView.Tests
 
 		public string RuntimePlatform { get; set; }
 
+		public OSAppTheme RequestedTheme => throw new NotImplementedException();
+
 		public void BeginInvokeOnMainThread (Action action) 
 		{
 			if (invokeOnMainThread == null)
@@ -202,6 +204,11 @@ namespace MLToolkit.Forms.SwipeCardView.Tests
 			}
 
 			return new SizeRequest(new Size (100, 20));
+		}
+
+		public Color GetNamedColor(string name)
+		{
+			throw new NotImplementedException();
 		}
 	}
 
