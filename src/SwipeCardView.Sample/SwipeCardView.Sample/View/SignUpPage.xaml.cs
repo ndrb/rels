@@ -11,18 +11,20 @@ using FireAuth;
 namespace SwipeCardView.Sample.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class SignUpPage : ContentPage
     {
         IAuth auth;
 
-        public Login()
+        public SignUpPage()
         {
             InitializeComponent();
             auth = DependencyService.Get<IAuth>();
         }
 
-        async void LoginClicked(object sender, EventArgs e)
+        async void SignUpClicked(object sender, EventArgs e)
         {
+            bool created = auth.SignUpWithEmailPassword(EmailInput.Text, PasswordInput.Text);
+
             string Token = await auth.LoginWithEmailPassword(EmailInput.Text, PasswordInput.Text);
 
             if (Token != "")
@@ -33,18 +35,22 @@ namespace SwipeCardView.Sample.View
             {
                 ShowError();
             }
-        }
 
+            /*
+            if (created)
+            {
+                await DisplayAlert("Success", "Welcome to our system. Log in to have full access", "OK");
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert("Sign Up Failed", "Something went wrong. Try again!", "OK");
+            }*/
+        }
         async private void ShowError()
         {
             await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
-
-        async void SignUpClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SignUpPage());
-        }
-
 
     }
 }

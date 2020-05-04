@@ -4,45 +4,34 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="SwipeCardView.Sample.View.Login">
+             x:Class="SwipeCardView.Sample.View.SignUpPage">
     <StackLayout
         VerticalOptions="Center"
         Margin="20">
 
-            <Label
-            Text="FireAuth"
+        <Label
+            Text="Create your account"
             HorizontalOptions="Center"
             TextColor="#4682B4"
-            FontSize="35"
-            Margin="0, 20"
-            />
+            FontSize="30"
+            Margin="0, 20" />
 
-            <Entry
+        <Entry
             Placeholder="E-mail"
             Keyboard="Email"
-            x:Name="EmailInput"
-            />
+            x:Name="EmailInput" />
 
-            <Entry
+        <Entry
             Placeholder="Password"
             IsPassword="true"
-            x:Name="PasswordInput"
-            />
-
-            <Button
-            Text="Enter"
-            Clicked="LoginClicked"
-            Margin="60, 40"
-            BackgroundColor="#4682B4"
-            TextColor="White"
-            />
+            x:Name="PasswordInput" />
 
         <Button
-            Text="Create new account"
-            TextColor="#4682B4"
-            HorizontalOptions="Center"
-            BackgroundColor="Transparent"
-            Clicked="SignUpClicked" />
+            Text="Sign Up"
+            Clicked="SignUpClicked"
+            Margin="60, 40"
+            BackgroundColor="#4682B4"
+            TextColor="White" />
 
     </StackLayout>
 </ContentPage>
