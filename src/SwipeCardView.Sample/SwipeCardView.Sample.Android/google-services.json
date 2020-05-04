@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:120952403237:android:6f73608fce7290fc6116cc",
         "android_client_info": {
-          "package_name": "SwipeCardView.Sample.Android"
+          "package_name": "swipecardview.sample.android"
         }
       },
       "oauth_client": [

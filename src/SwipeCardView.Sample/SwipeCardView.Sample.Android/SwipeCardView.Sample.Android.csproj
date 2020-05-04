@@ -65,6 +65,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Xamarin.Android.ManifestMerger">
+      <Version>1.0.0-preview03</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Compat">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Design">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Firebase.Auth">
       <Version>71.1605.0</Version>
     </PackageReference>
@@ -75,6 +87,21 @@
       <Version>71.1601.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Base">
+      <Version>71.1610.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Basement">
+      <Version>71.1620.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Gcm">
+      <Version>71.1600.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Measurement.Base">
+      <Version>71.1630.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Tasks">
+      <Version>71.1601.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthDroid.cs" />
@@ -83,7 +110,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="google-services.json" />
+    <GoogleServicesJson Include="google-services.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

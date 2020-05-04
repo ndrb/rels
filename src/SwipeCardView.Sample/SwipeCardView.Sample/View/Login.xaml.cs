@@ -23,7 +23,32 @@ namespace SwipeCardView.Sample.View
 
         async void LoginClicked(object sender, EventArgs e)
         {
+            if (auth == null)
+            {
+                Console.WriteLine("Object is null FUCK!!!");
+                Console.WriteLine("This is C#");
+                return;
+            }
+            else 
+            {
+                Console.WriteLine("Object is NOT NULL!!!");
+            }
+            if (auth.LoginWithEmailPassword(EmailInput.Text, PasswordInput.Text) == null)
+            {
+                Console.WriteLine("KMS");
+            }
+            else
+            {
+                Console.WriteLine("KMS: "+ EmailInput.Text);
+            }
+            
             string Token = await auth.LoginWithEmailPassword(EmailInput.Text, PasswordInput.Text);
+
+            if (Token == null)
+            {
+                Console.WriteLine("Floor it!");
+            }
+
             if (Token != "")
             {
                 await Navigation.PushAsync(new LoggedPage());

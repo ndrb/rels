@@ -13,7 +13,6 @@ namespace FireAuth.Droid
     {
         public async Task<string> LoginWithEmailPassword(string email, string password)
         {
-            Console.WriteLine("This is C#");
             try
             {
                 var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);

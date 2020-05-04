@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Firebase;
 
+
 namespace SwipeCardView.Sample.Droid
 {
     [Activity(Label = "SwipeCardView.Sample", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -10,13 +11,10 @@ namespace SwipeCardView.Sample.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-
-            FirebaseApp.InitializeApp(Application.Context);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             var width = Resources.DisplayMetrics.WidthPixels;
@@ -26,6 +24,8 @@ namespace SwipeCardView.Sample.Droid
             App.ScreenWidth = (width - 0.5f) / density;
             App.ScreenHeight = (height - 0.5f) / density;
 
+
+            FirebaseApp.InitializeApp(Application.Context);
             LoadApplication(new App());
         }
     }
