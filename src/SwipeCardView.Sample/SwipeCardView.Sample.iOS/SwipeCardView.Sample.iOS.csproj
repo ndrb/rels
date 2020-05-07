@@ -122,6 +122,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CarouselView">
+      <Version>7.0.3.1</Version>
+    </PackageReference>
     <PackageReference Include="CarouselView.FormsPlugin">
       <Version>5.2.0</Version>
     </PackageReference>
@@ -129,10 +132,10 @@
       <Version>2.3.6</Version>
     </PackageReference>
     <PackageReference Include="Plugin.Permissions">
-      <Version>6.0.1</Version>
+      <Version>3.0.0.12</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
-      <Version>5.0.1</Version>
+      <Version>4.0.1.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>

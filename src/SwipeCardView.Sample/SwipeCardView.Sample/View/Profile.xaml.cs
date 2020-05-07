@@ -6,7 +6,6 @@ using SwipeCardView.Sample.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -107,6 +106,7 @@ namespace SwipeCardView.Sample.View
                     MessagingCenter.Subscribe<App, List<string>>((App)Xamarin.Forms.Application.Current, "ImagesSelectedAndroid", (s, images) =>
                     {
                         //If we have selected images, put them into the carousel view.
+                        Console.WriteLine(images.Count);
                         if (images.Count > 0)
                         {
                             ImgCarouselView.ItemsSource = images;

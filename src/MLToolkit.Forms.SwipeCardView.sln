@@ -13,6 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwipeCardView.Sample", "Swi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLToolkit.Forms.SwipeCardView.Tests", "MLToolkit.Forms.SwipeCardView.Tests\MLToolkit.Forms.SwipeCardView.Tests.csproj", "{CD96F477-ACDB-4B35-B81E-DEBF4F749EEB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9CC2633-3BF8-4392-896E-44545B0B471D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Nader.Admin-PC\Desktop\.gitignore.txt = ..\..\..\..\..\Nader.Admin-PC\Desktop\.gitignore.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

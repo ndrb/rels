@@ -10,20 +10,10 @@ using Android.Widget;
 using Android.Content;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
 using Plugin.CurrentActivity;
-using Android.Content;
-using System.Collections.Generic;
-using Xamarin.Forms;
-using Android.Database;
-using Android.Provider;
 using CarouselView.FormsPlugin.Android;
-
+using System.Collections.ObjectModel;
+using Plugin.Permissions;
 
 namespace SwipeCardView.Sample.Droid
 {
@@ -49,7 +39,9 @@ namespace SwipeCardView.Sample.Droid
 
             //NuGet Initializations
             CrossCurrentActivity.Current.Init(this, bundle);
+            
             CarouselViewRenderer.Init();
+            CarouselView.FormsPlugin.Android.CarouselViewRenderer.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: false);
 
             base.OnCreate(bundle);
@@ -68,9 +60,10 @@ namespace SwipeCardView.Sample.Droid
             LoadApplication(new App());
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
@@ -80,6 +73,10 @@ namespace SwipeCardView.Sample.Droid
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
+
+            //NuGet Initializations
+            CarouselViewRenderer.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: false);
 
             //If we are calling multiple image selection, enter into here and return photos and their filepaths.
             if (requestCode == OPENGALLERYCODE && resultCode == Result.Ok)
@@ -118,9 +115,12 @@ namespace SwipeCardView.Sample.Droid
 
                     //Send our images to the carousel view.
                     MessagingCenter.Send<App, List<string>>((App)Xamarin.Forms.Application.Current, "ImagesSelectedAndroid", images);
+                    items = new ObservableCollection<App>();
                 }
             }
         }
+
+        public ObservableCollection<App> items { get; set; }
 
         /// <summary>
         ///     Get the real path for the current image passed.
